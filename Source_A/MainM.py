@@ -1,18 +1,16 @@
-from Source_A.Classes import Category
+from Account import Account
+from Loan_Places import ManaTO
 
-def create_spend_chart(categories):
+def CreateAccount():
+    account=Account(50,'Hello',0,0)
+    return account
+def SeeLoan(myaccount1):
+    return myaccount1.loan_list
+def GetLoan(myaccount1):
+    manato=ManaTO([])
+    loan=manato.take_loan(100,myaccount1)
+    return manato
 
-    title="Percentage spent by category"
-    food = Category('Food')
-
-    food.deposit(1000,'initial deposit')
-    food.withdraw(10.15,'groceries')
-    food.withdraw(15.89,'restaurant and more food for dessert')
-
-    clothing = Category('Clothing')
-    food.transfer(50, clothing)
-    print(food)
-
-    print(food.get_balance())
-
-    print(clothing.get_balance())
+myaccount1=CreateAccount()
+GetLoan(myaccount1)
+print(SeeLoan(myaccount1))

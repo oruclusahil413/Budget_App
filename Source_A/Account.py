@@ -1,17 +1,16 @@
-
 class Account:
-    def __init__(self,total_balance,transaction_history,loan_to_M,loan_to_Bank):
+    def __init__(self,total_balance,transaction_history,total_debts_loan,total_debts_bank):
         self.total_balance = total_balance
         self.transaction_history = transaction_history
-        self.loan_to_M = loan_to_M
-        self.loan_to_Bank = loan_to_Bank
+        self.total_debts_loan = total_debts_loan
+        self.total_debts_bank = total_debts_bank
 
 class MainAccount(Account):
-    def __init__(self,total_balance,transaction_history,balance,loan_to_M,loan_to_Bank):
-        super().__init__(total_balance,transaction_history,loan_to_M,loan_to_Bank)
+    def __init__(self,total_balance,transaction_history,balance,total_debts_loan,total_debts_bank):
+        super().__init__(total_balance,transaction_history,total_debts_loan,total_debts_bank)
         self.__balance=balance
 
 class SavingsAccount(Account):
-    def __init__(self,total_balance,transaction_history,balance,loan_to_M,loan_to_Bank):
-        super().__init__(total_balance,transaction_history,loan_to_M,loan_to_Bank)
+    def __init__(self,total_balance,transaction_history,balance,total_debts_loan,total_debts_bank):
+        super().__init__(total_balance,transaction_history,total_debts_loan,total_debts_bank)
         self.__balance = balance
