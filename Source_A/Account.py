@@ -1,3 +1,5 @@
+from Withdraw import Withdraw
+
 class Account:
     def __init__(self,total_balance,transaction_history,total_debts_loan,total_debts_bank):
         self.total_balance = total_balance

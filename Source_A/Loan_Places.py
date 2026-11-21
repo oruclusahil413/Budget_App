@@ -39,7 +39,7 @@ class LoanPlaces:
     # def remove_debts(self,amount_of_debts):
 
     def see_debts(self,loan_list,loan_dictionary,amount_of_debts):
-
+        return self.loan_list
 
     def take_loan(self,amount_to_loan,account,date_loan_taken=0):
         total_debt=0

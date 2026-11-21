@@ -3,6 +3,9 @@ class MainBank:
         self.commission_rate = commission_rate
         self.interest_rate = interest_rate
 
+    # def take_loan(self):
+
+
 class Unibank(MainBank):
     def __init__(self,commission_rate,interest_rate,amount):
         super().__init__(commission_rate,interest_rate)
