@@ -1,14 +1,28 @@
 from Account import Account
-from Loan_Places import ManaTO
+from Account import MainAccount
+from Account import SavingsAccount
+from Withdraw import Withdraw
 
 def CreateAccount():
-    account=Account(50,'Hello',0,0)
-    return account
-def GetLoan(myaccount1):
-    manato=ManaTO([])
-    loan=manato.take_loan(100,myaccount1)
-    return manato
+     print("Write balance")
+     balance=int(input())
+     print("Savings account(S) | Daily-Usage account (A)")
+     account_type=input()
+     while True:
+          if account_type=="S":
+               return SavingsAccount(balance, [], balance, 0,0)
+          elif account_type=="A":
+               return MainAccount(balance, [], balance, 0,0)
+          else:
+               print("Account type error")
 
-myaccount1=CreateAccount()
-GetLoan(myaccount1)
-print(LoanPlaces.see_debts(myaccount1))
+
+myaccount1 = CreateAccount()
+print("İlkin balans:", myaccount1.total_balance)
+
+w = Withdraw(100)
+print(w.withdraw_operation(myaccount1))
+
+print("Son balans:",myaccount1.total_balance)
+print("Kredit borcu:",myaccount1.total_debts_loan)
+print("Kredit siyahısı:",myaccount1.loan_list)
